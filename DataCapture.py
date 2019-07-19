@@ -1,9 +1,4 @@
 class DataCapture:
-    """
-    I'm running under the assumption here that when you do any search
-    on the list of values that you're only able to search on values
-    that you've previously provided via add()
-    """
     _total_values = 0
     _value_counts = [0] * 999 # initialize all counts to 0
     _stat_values = [{}] * 999
@@ -20,6 +15,10 @@ class DataCapture:
     def _value_in_list_check(self, value_to_check):
         """
         Re-useable error checking to ensure passed value is in list
+
+        I'm running under the assumption here that when you do any search
+        on the list of values that you're only able to search on values
+        that you've previously provided via add()
         """
         if self._stat_values[value_to_check] == {}:
             raise LookupError("Value provided not added to list")
